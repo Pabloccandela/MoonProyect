@@ -7,16 +7,16 @@ module.exports={
             products = products.filter(products=>products.marca==req.query.filter)
         }
         if(req.query.carrito){
-            if(req.cookies.carritoArrays){
+            if(req.cookies.carritoArr){
                 carrito.push(req.query.carrito);
-                req.cookies.carritoArrays=carrito;
+                req.cookies.carritoArr=carrito;
             }
             else{
                 res.cookie('carritoArrays',[])
                 carrito.push(req.query.carrito);
-                req.cookies.carritoArrays=carrito;
+                req.cookies.carritoArr=carrito;
             }
-            console.log(req.cookies.carritoArrays)
+            console.log(req.cookies.carritoArr)
         }
 
         res.render('shop',{
@@ -54,5 +54,20 @@ module.exports={
         console.log(product)
         productsData.saveProduct(product);
         res.redirect("/shop");
+    },
+    carrito:(req,res) => {
+        const products = productsData.filterById(carrito);
+        res.render("carrito", {
+            title:"Carrito MOON PROYECT",
+            products
+        });
+    },
+    carritoDelete: (req,res) => {
+        carrito = carrito.filter(id => id != req.params.id);
+        const products = productsData.filterById(carrito);
+        res.render("carrito", {
+            title:"Carrito MOON PROYECT",
+            products
+        });
     }
 }

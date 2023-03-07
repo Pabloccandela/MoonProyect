@@ -23,9 +23,11 @@ router.post('/login',validationsLogin,controller.loginVerified);
 // contacto
 router.get('/contacto',controller.contacto);
 
+
 //shop
 const productRoutes = require('./productRoutes');
 router.use('/shop',productRoutes);  
+
 
 
 //error 404

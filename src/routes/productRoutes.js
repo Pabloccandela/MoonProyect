@@ -22,5 +22,10 @@ router.get('/',productController.shop);
 router.get("/add", productController.addProductsForm);
 router.post("/add",upload.single("image"), productController.addProducts);
 
+// añadir producto
+router.get("/carrito/delete/:id", productController.carritoDelete);
+
+// carrito
+router.get("/carrito", productController.carrito);
 
 module.exports = router;

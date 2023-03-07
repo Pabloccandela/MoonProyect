@@ -1,0 +1,44 @@
+.carrito-product-container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem .5rem;
+    box-shadow: 0 0 .3rem black;
+    border-radius: 1rem;
+}
+.carrito-product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,.5);
+}
+
+.carrito-product h5{
+    width: 50%;
+}
+.carrito-product p{
+    width: 20%;
+    font-weight: bold;
+}
+.carrito-product a{
+    text-align: center;
+    width: 10%;
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+    border-radius: .3rem;
+}
+.msg-carrito{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.btn-carrito-container{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
