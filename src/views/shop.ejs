@@ -7,17 +7,21 @@
     <%- include('./partials/navbar.ejs') %>
     <header>
         <div class="nav-item dropdown">
-            <h1 class="title">Catálogo</h1>
+            <h1 class="title">Catálogo</h1> 
+            <div class="carrito-button">
+                <a href="/carrito">Ir al carrito <i class="fa-solid fa-cart-shopping"></i> </a>
+            </div>
+            <!-- <p>Para realizar un pedido sigue los siguentes pasos: Primero añade el/los productos que desees al carrito, luego ve al carrito en la parte superion derecha de la página. Por ultimo dentro del carrito, presiona enviar pedido. Te llevara a Whatsapp donde solo debes enviar el msj qu </p> -->
             <a class="nav-link dropdown-toggle filter-button" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Filtros
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Nike</a></li>
-                  <li><a class="dropdown-item" href="#">Adidas</a></li>
-                  <li><a class="dropdown-item" href="#">Converse</a></li>
-                  <li><a class="dropdown-item" href="#">Puma</a></li>
+                  <li><a class="dropdown-item" href="/shop?filter=Nike">Nike</a></li>
+                  <li><a class="dropdown-item" href="/shop?filter=Adidas">Adidas</a></li>
+                  <li><a class="dropdown-item" href="/shop?filter=Converse">Converse</a></li>
+                  <li><a class="dropdown-item" href="/shop?filter=Puma">Puma</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Ver todo...</a></li>
+                  <li><a class="dropdown-item" href="/shop">Ver todo...</a></li>
               </ul>
           </div>
     </header>
@@ -33,8 +37,7 @@
                   style="font-size: 1.1rem; font-weight: bold"
                   >$<%= product.price %></p>
                   <div class="card-button-container">
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                    <a href="#" class="btn btn-secondary card-button"><i class="fa-solid fa-heart"></i></a>
+                    <a href="/shop?carrito=<%=product.id%> " class="btn btn-primary">Agregar al carrito</a>
                   </div>
                 </div>
             </div>

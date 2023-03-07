@@ -96,3 +96,14 @@
     text-align: center;
     outline: none;
 }
+
+.carrito-button{
+    width: 100%;
+    text-align: center;
+}
+.carrito-button a{
+    padding: .5rem 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 2rem;
+}

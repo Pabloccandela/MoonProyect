@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    
+    <main>
+        <form action="/shop/add" method="post" enctype="multipart/form-data">
+            <input type="text" placeholder="Nombre" name="name">
+            <input type="number" placeholder="Precio" name="price">
+            <input type="text" placeholder="Talla" name="talla">
+            <input type="text" placeholder="Marca: Nike,Puma, Adidas ..."
+            name="marca">
+            <input type="number" placeholder="discount" name="discount">
+            <input type="file" name="image">
+            <input type="submit">
+        </form>
+    </main>
+    
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

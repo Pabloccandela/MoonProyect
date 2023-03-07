@@ -1,57 +1,20 @@
 [
     {
-        "id":"asdasd-1231dasd-12312",
-        "name":"Zapatillas pumas overwire 21",
-        "description":"loremasdasdasdasdasdasdasdasdasdas asda sd asd asd asdasdasd asd asd asd",
-        "talla":"37",
-        "price":999,
-        "category": "zapatillas",
-        "image":"/img/products/defaultProduct.jpg"
+        "id": "asdasd-1231dasd-12312",
+        "name": "Zapatillas pumas overwire 21",
+        "price": 999,
+        "talla": "37",
+        "marca": "Puma",
+        "discount": 0,
+        "image": "/img/products/defaultProduct.jpg"
     },
     {
-        "id":"asdasd-1231dasd-12312",
-        "name":"Zapatillas pumas overwire 21",
-        "description":"loremasdasdasdasdasdasdasdasdasdas asda sd asd asd asdasdasd asd asd asd",
-        "talla":"37",
-        "price":999,
-        "category": "zapatillas",
-        "image":"/img/products/defaultProduct.jpg"
-    },
-    {
-        "id":"asdasd-1231dasd-12312",
-        "name":"Zapatillas pumas overwire 21",
-        "description":"loremasdasdasdasdasdasdasdasdasdas asda sd asd asd asdasdasd asd asd asd",
-        "talla":"37",
-        "price":999,
-        "category": "zapatillas",
-        "image":"/img/products/defaultProduct.jpg"
-    },
-    {
-        "id":"asdasd-1231dasd-12312",
-        "name":"Zapatillas pumas overwire 21",
-        "description":"loremasdasdasdasdasdasdasdasdasdas asda sd asd asd asdasdasd asd asd asd",
-        "talla":"37",
-        "price":999,
-        "category": "zapatillas",
-        "image":"/img/products/defaultProduct.jpg"
-    },
-    {
-        "id":"asdasd-1231dasd-12312",
-        "name":"Zapatillas pumas overwire 21",
-        "description":"loremasdasdasdasdasdasdasdasdasdas asda sd asd asd asdasdasd asd asd asd",
-        "talla":"37",
-        "price":999,
-        "category": "zapatillas",
-        "image":"/img/products/defaultProduct.jpg"
-    },
-    {
-        "id":"asdasd-1231dasd-12312",
-        "name":"Zapatillas pumas overwire 21",
-        "description":"loremasdasdasdasdasdasdasdasdasdas asda sd asd asd asdasdasd asd asd asd",
-        "talla":"37",
-        "price":999,
-        "category": "zapatillas",
-        "image":"/img/products/defaultProduct.jpg"
+        "id": 1678206969750,
+        "name": "Nike Air Max 90",
+        "price": 8900,
+        "talla": "45 al 31",
+        "marca": "Nike",
+        "discount": null,
+        "image": "/img/products/sneaker/image-1678206969746.jpg"
     }
-    
 ]
