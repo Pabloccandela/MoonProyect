@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <main>
+        <form class="main-form" action="/login" method="post">
+            <div class="form-container">
+                <input type="text"
+                 name="username" 
+                 placeholder="User or Email" 
+                >
+                
+                <input type="password"
+                 name="pass"
+                 placeholder="Password"
+                >
+                
+                <input type="submit">
+            </div>
+            <div class="errors-container">
+                <% if (errors) { %>
+                    <% errors.forEach(err => { %>
+                        <div class="error">
+                            <p><%= err.msg %></p>
+                        </div>
+                    <% }) %>
+                <% } %>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

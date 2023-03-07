@@ -1,0 +1,44 @@
+.contact-header{
+    width: 100%;
+    background-image: url('../../img/products/sneaker/air-force-one/air-force-one-rosa-negro.PNG');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-header h1{
+    padding: 5rem 0 ;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 4rem;
+    background-color: rgba(0, 0, 0, .7);
+   
+}
+
+.contact-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .contact-main-container{
+        flex-direction: row;
+        padding: 2rem 2rem;
+    } 
+}
+
+.section-contact{
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 1.3rem;
+    box-shadow: 0 0 .2rem black;
+    border-radius: .8rem;
+}

@@ -1,0 +1,35 @@
+.home-header{
+    width: 100%;
+    height: 500px;
+    background-image: url('../../img/products/sneaker/jordan-low/jordan-low-rojo-nb.PNG');
+    background-position: center;
+    background-size: contain;
+}
+
+.home-header-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 500px;
+}
+
+.home-header h1{
+    color: white;
+    font-weight: bold;
+    font-size: 5rem;
+}
+.home-header-frase{
+color:white;
+font-size: 1.5rem;
+}
+
+.home-header-ubication{
+    font-size: 1rem;
+    color: black;
+    background-color: orange;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
