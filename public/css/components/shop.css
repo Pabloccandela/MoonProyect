@@ -88,3 +88,11 @@
     text-align: center;
     outline: none;
 }
+.dropdown-submit{
+    margin-top: .5rem;
+    width: 100%;
+    border: 1px solid rgb(165, 165, 165);
+    border-radius: 1rem;
+    text-align: center;
+    outline: none;
+}
