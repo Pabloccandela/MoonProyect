@@ -8,9 +8,9 @@
     <header>
         <div class="nav-item dropdown">
             <h1 class="title">Catálogo</h1> 
-            <div class="carrito-button">
+            <!-- <div class="carrito-button">
                 <a href="/shop/carrito">Ir al carrito <i class="fa-solid fa-cart-shopping"></i> </a>
-            </div>
+            </div> -->
             <!-- <p>Para realizar un pedido sigue los siguentes pasos: Primero añade el/los productos que desees al carrito, luego ve al carrito en la parte superion derecha de la página. Por ultimo dentro del carrito, presiona enviar pedido. Te llevara a Whatsapp donde solo debes enviar el msj qu </p> -->
             <a class="nav-link dropdown-toggle filter-button" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Filtros
@@ -26,22 +26,32 @@
           </div>
     </header>
     <main class="main-container">
-        <% products.forEach(product => { %>
-            <div class="card card-container">
-                <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
-                <div class="card-body">
-                  <h5 class="card-title"
-                  style="font-size: 1.1rem;"
-                  ><%= product.name %></h5>
-                  <p class="card-text"
-                  style="font-size: 1.1rem; font-weight: bold"
-                  >$<%= product.price %></p>
-                  <div class="card-button-container">
-                    <a href="/shop?carrito=<%=product.id%> " class="btn btn-primary">Agregar al carrito</a>
-                  </div>
+        <% if (products.length !=0) { %>
+            <% products.forEach(product => { %>
+                <div class="card card-container">
+                    <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
+                    <div class="card-body">
+                      <h5 class="card-title"
+                      style="font-size: 1.1rem;"
+                      ><%= product.name %></h5>
+    
+                      <p class="card-text"
+                      style="font-size: 1rem;"
+                      >Talles del <%= product.talla %></p>
+                      <p class="card-text"
+                      style="font-size: 1.1rem; font-weight: bold"
+                      >$<%= product.price %></p>
+                      <!-- <div class="card-button-container">
+                        <a href="/shop?carrito=<%=product.id%> " class="btn btn-primary">Agregar al carrito</a>
+                      </div> -->
+                    </div>
                 </div>
+            <% }) %>
+        <% } else { %>
+            <div>
+                <h3 style="height: 320px;">No se encontraron resultados!</h3>
             </div>
-        <% }) %>
+        <% } %>
     </main>
     <%- include('./partials/footer.ejs') %>
 </body>

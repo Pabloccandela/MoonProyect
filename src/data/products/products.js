@@ -30,5 +30,16 @@ module.exports = {
         }
         console.log(products)
         return products;
+    },
+    filterBySearch: (search) => {
+        const fileProducts = fs.readFileSync(productsFilePath, 'utf8');
+        const allProducts = JSON.parse(fileProducts);
+        let products=[]
+        search=search.toLowerCase().split(" ")
+
+        // FILTRADO
+
+        // BUSQUEDA POR NOMBRE DE PRODUCTOS
+        return products;
     }
 }

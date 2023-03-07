@@ -6,18 +6,21 @@ module.exports={
         if(req.query.filter){
             products = products.filter(products=>products.marca==req.query.filter)
         }
-        if(req.query.carrito){
-            if(req.cookies.carritoArr){
-                carrito.push(req.query.carrito);
-                req.cookies.carritoArr=carrito;
-            }
-            else{
-                res.cookie('carritoArrays',[])
-                carrito.push(req.query.carrito);
-                req.cookies.carritoArr=carrito;
-            }
-            console.log(req.cookies.carritoArr)
+        if(req.query.search){
+            products = productsData.filterBySearch(req.query.search)
         }
+        // if(req.query.carrito){
+        //     if(req.cookies.carritoArr){
+        //         carrito.push(req.query.carrito);
+        //         req.cookies.carritoArr=carrito;
+        //     }
+        //     else{
+        //         res.cookie('carritoArrays',[])
+        //         carrito.push(req.query.carrito);
+        //         req.cookies.carritoArr=carrito;
+        //     }
+        //     console.log(req.cookies.carritoArr)
+        // }
 
         res.render('shop',{
             title: "MoonShop", 

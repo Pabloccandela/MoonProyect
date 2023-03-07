@@ -25,6 +25,8 @@ router.post("/add",upload.single("image"), productController.addProducts);
 // añadir producto
 router.get("/carrito/delete/:id", productController.carritoDelete);
 
+// search products
+
 // carrito
 router.get("/carrito", productController.carrito);
 
