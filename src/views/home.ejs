@@ -13,6 +13,45 @@
       </div>
     </header>
     
+    <main class="home-main">
+      <h2>Marcas populares!</h2>
+      <section class="home-marks">
+        <a href="/shop?filter=Nike" class="mark-container"><div></div></a>
+        <a href="/shop?filter=Adidas" class="mark-container"><div></div></a>
+        <a href="/shop?filter=Converse" class="mark-container"><div></div></a>
+        <a href="/shop?filter=IMP" class="mark-container"><div></div></div></a>
+      </section>
+      <div style="width: 90%;height: 2px;background-color: rgb(208, 208, 208);margin: 3rem auto;border-radius: 1rem;"></div>
+      <h2 style="text-transform: uppercase;">Ofertas!</h2>
+      <section class="home-oferts">
+        <% if (products.length !=0) { %>
+          <% products.forEach(product => { %>
+              <div class="card card-container">
+                  <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
+                  <div class="card-body">
+                    <h5 class="card-title"
+                    style="font-size: 1.1rem;"
+                    ><%= product.name %></h5>
+  
+                    <p class="card-text"
+                    style="font-size: 1rem;"
+                    >Talles del <%= product.talla %></p>
+                    <p class="card-text"
+                    style="font-size: 1.1rem; font-weight: bold"
+                    >$<%= product.price %></p>
+                    <!-- <div class="card-button-container">
+                      <a href="/shop?carrito=<%=product.id%> " class="btn btn-primary">Agregar al carrito</a>
+                    </div> -->
+                  </div>
+              </div>
+          <% }) %>
+      <% } else { %>
+          <div>
+              <h3 style="height: 320px;">No se encontraron resultados!</h3>
+          </div>
+      <% } %>
+      </section>
+    </main>
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>

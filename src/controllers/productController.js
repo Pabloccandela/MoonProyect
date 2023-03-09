@@ -2,17 +2,18 @@ const productsData = require('../data/products/products.js');
 let carrito = []
 module.exports={
     shop: (req,res) => {
-        let products = [];
+        let products = productsData.getProducts();
+        
         if(req.query.filter){
+            console.log("hay un filtro "+req.query.filter)
             products = products.filter(products=>products.marca==req.query.filter)
         }
-        else if(req.query.search){
+        
+        if(req.query.search){
             ids = productsData.filterBySearch(req.query.search)
             products = productsData.filterById(ids);
         }
-        else{
-            products = productsData.getProducts();
-        }
+
         // if(req.query.carrito){
         //     if(req.cookies.carritoArr){
         //         carrito.push(req.query.carrito);

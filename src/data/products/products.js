@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { carrito } = require('../../controllers/productController');
+
 
 const productsFilePath = path.join(__dirname, 'products.json');
 

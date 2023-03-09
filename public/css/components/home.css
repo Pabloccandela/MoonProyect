@@ -1,9 +1,9 @@
 .home-header{
     width: 100%;
     height: 500px;
-    background-image: url('../../img/products/sneaker/jordan-low/jordan-low-rojo-nb.PNG');
+    background-image: url('../../img/bannerhome.jpg');
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 }
 
 .home-header-container{
@@ -28,9 +28,176 @@ font-size: 1.5rem;
 }
 
 .home-header-ubication{
+    margin-top: 2rem;
     font-size: 1rem;
     color: black;
     background-color: orange;
     padding: .5rem 1rem;
     border-radius: 1rem;
+}
+
+/* section marks  */
+
+
+
+.home-main{
+    padding: 3rem;
+}
+
+.home-main h2{
+    margin:0;
+    padding: 0 2rem 2rem 2rem;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    
+}
+
+.home-oferts,
+.home-marks{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap:1rem ;
+    justify-content: space-around;
+}
+
+.mark-container{
+    width:120px;
+    height: 120px;
+    background-size: cover;
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+    .mark-container{
+        width:160px;
+        height: 160px;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+}
+
+@media (min-width:1080px) {
+    .mark-container{
+        width:200px;
+        height: 200px;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+}
+
+/* marks */
+.mark-container:nth-child(1){
+    background-image: url('../../img/marks/nike-logo.jpg');
+    transition: .5s all;
+}
+.mark-container:nth-child(2){
+    background-image: url('../../img/marks/adidas-logo.jpg');
+    transition: .5s all;
+}
+.mark-container:nth-child(3){
+    background-image: url('../../img/marks/converse-logo.jpg');
+    transition: .5s all;
+}
+
+.mark-container:nth-child(4){
+    background-image: url('../../img/marks/importado-logo.jpg');
+    transition: .5s all;
+}
+
+/* marks hover */
+
+.mark-container:nth-child(1):hover{
+    background-image: url('../../img/products/sneaker/image-1678380848243.jpg');
+    transition: .6s all;
+}
+
+.mark-container:nth-child(2):hover{
+    background-image: url('../../img/products/sneaker/image-1678383777899.webp');
+    transition: .5s all;
+}
+.mark-container:nth-child(3):hover{
+    background-image: url('../../img/products/sneaker/image-1678382777348.PNG');
+    transition: .5s all;
+}
+.mark-container:nth-child(4):hover{
+    background-image: url('../../img/products/sneaker/image-1678384148386.jpg');
+    transition: .5s all;
+}
+
+/* marks hover div*/
+
+.mark-container div{
+    height: 120px;
+    width: 120px;
+    border-radius: 1rem ;
+}
+
+.mark-container div::before{
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "";
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px){
+    .mark-container div{
+        height: 160px;
+        width: 160px;
+    }
+
+    .mark-container div::before{
+        height: 160px;
+        width: 160px;
+    }
+}
+
+@media (min-width: 1080px){
+    .mark-container div{
+        height: 200px;
+        width: 200px;
+    }
+
+    .mark-container div::before{
+        height: 200px;
+        width: 200px;
+    }
+}
+
+.mark-container:nth-child(1) div:hover::before{
+    content: "Nike";
+    transition: 1s all;
+}
+.mark-container:nth-child(2) div:hover::before{
+    content: "Adidas";
+    transition: 1s all;
+}
+.mark-container:nth-child(3) div:hover::before{
+    content: "Converse";
+    transition: 1s all;
+}
+.mark-container:nth-child(4) div:hover::before{
+    content: "Importados";
+    transition: 1s all;
+}
+
+/* mark hover face */
+
+.mark-container:hover > div{
+    background-color: rgba(0, 0, 0, .6);
+    transition: .6s all;
+}
+
+/* home oferts */
+
+.home-oferts{
+    display: flex;
 }

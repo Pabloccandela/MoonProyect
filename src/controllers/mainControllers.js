@@ -1,9 +1,13 @@
 const {validationResult} = require('express-validator');
+const productsData = require('../data/products/products.js');
 const usersData = require('../data/users/users')
 module.exports={
     home : (req,res) => {
+        let products = productsData.getProducts();
+        products = products.filter(product => product.discount!=null)
         res.render('home',{
-            title: 'Moon Proyect',	
+            title: 'Moon Proyect',
+            products	
         });
     },
     login:(req,res) => {
