@@ -113,7 +113,7 @@
         "price": 6450,
         "talla": "35 al 40",
         "marca": "Converse",
-        "discount": 50,
+        "discount": null,
         "image": "/img/products/sneaker/image-1678383193600.jpg"
     },
     {
@@ -131,7 +131,7 @@
         "price": 8200,
         "talla": "35 al 44",
         "marca": "Puma",
-        "discount": 5,
+        "discount": 25,
         "image": "/img/products/sneaker/image-1678383501699.PNG"
     },
     {
