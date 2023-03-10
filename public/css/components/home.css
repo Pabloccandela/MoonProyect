@@ -201,3 +201,8 @@ font-size: 1.5rem;
 .home-oferts{
     display: flex;
 }
+
+.banner-ofert{
+    background-image: url('../../img/products/sneaker/image-1678381643102.png');
+    background-size: contain;
+}

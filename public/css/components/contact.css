@@ -1,8 +1,8 @@
 .contact-header{
     width: 100%;
-    background-image: url('https://mor.bo/wp-content/uploads/2021/07/sneakernews.jpg');
+    background-image: url('../../img/products/sneaker/image-1678383193600.jpg');
 
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 

@@ -107,3 +107,7 @@
     color: white;
     border-radius: 2rem;
 }
+.banner-shop{
+    background-image: url('../../img/products/sneaker/image-1678383873370.jpg');
+    background-size: contain;
+}
