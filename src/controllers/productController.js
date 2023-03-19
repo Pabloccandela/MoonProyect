@@ -1,38 +1,30 @@
+// imports 
 const productsData = require('../data/products/products.js');
-let carrito = []
-module.exports={
-    shop: (req,res) => {
-        let products = productsData.getProducts();
-        
-        if(req.query.filter){
-            console.log("hay un filtro "+req.query.filter)
-            products = products.filter(products=>products.marca==req.query.filter)
-        }
-        
-        if(req.query.search){
-            ids = productsData.filterBySearch(req.query.search)
-            products = productsData.filterById(ids);
-        }
+const db = require('../database/models/index');
 
-        // if(req.query.carrito){
-        //     if(req.cookies.carritoArr){
-        //         carrito.push(req.query.carrito);
-        //         req.cookies.carritoArr=carrito;
-        //     }
-        //     else{
-        //         res.cookie('carritoArrays',[])
-        //         carrito.push(req.query.carrito);
-        //         req.cookies.carritoArr=carrito;
-        //     }
-        //     console.log(req.cookies.carritoArr)
+module.exports={
+    catalogue: (req,res) => {
+        db.Products.findAll()
+            .this(data => {
+                products = data.map(data=>product);
+                res.send(products)
+            })
+        // if(req.query.filter){
+        //     console.log("hay un filtro "+req.query.filter)
+        //     products = products.filter(products=>products.brand==req.query.filter)
+        // }
+        
+        // if(req.query.search){
+        //     ids = productsData.filterBySearch(req.query.search)
+        //     products = productsData.filterById(ids);
         // }
 
-        res.render('shop',{
-            title: "MoonShop", 
-            products
-        })
+        // res.render('catalogue',{
+        //     title: "MoonShop", 
+        //     products
+        // })
     },
-    addProductsForm: (req,res)=>{
+    addForm: (req,res)=>{
         if(req.query.pass && req.query.pass == "kv7nulvjwc"){
             res.render("addProducts",{
             title:"Añadir producto"
@@ -43,7 +35,7 @@ module.exports={
             })
         }
     },
-    addProducts: (req,res)=>{
+    add: (req,res)=>{
         if(!req.body) {
             return res.status(400).json({error: 'No hay datos'});
         }
@@ -51,31 +43,29 @@ module.exports={
         const image = req.file ? "/img/products/sneaker/"+req.file.filename:"/img/products/default-image.png";
 
         const product = {
-            id:Date.now(),
             name:req.body.name,
             price:Number(req.body.price),
-            talla:req.body.talla,
-            marca:req.body.marca,
+            minSize:req.body.minSize,
+            maxSize:req.body.maxSize,
+            brand:req.body.brand,
             discount:Number(req.body.descuento),
             image
         }
         console.log(product)
-        productsData.saveProduct(product);
-        res.redirect("/shop");
+        try{
+            db.Products.create(product);
+            res.redirect("/shop");
+        }catch(err){
+            res.send("ERROR: " + err);
+        }
+        
     },
-    carrito:(req,res) => {
-        const products = productsData.filterById(carrito);
-        res.render("carrito", {
-            title:"Carrito MOON PROYECT",
-            products
-        });
-    },
-    carritoDelete: (req,res) => {
-        carrito = carrito.filter(id => id != req.params.id);
-        const products = productsData.filterById(carrito);
-        res.render("carrito", {
-            title:"Carrito MOON PROYECT",
-            products
-        });
+    database: (req,res) => {
+        const id = req.query.id
+        db.Products.findAll()
+            .then((products) => {
+                console.log(products)
+            })
+        res.send("MIRAR CONSOLE LOG")
     }
 }

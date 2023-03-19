@@ -8,13 +8,14 @@
     
     <main>
         <form action="/shop/add" method="post" enctype="multipart/form-data">
-            <input type="text" placeholder="Nombre" name="name">
-            <input type="number" placeholder="Precio" name="price">
-            <input type="text" placeholder="Talla" name="talla">
-            <input type="text" placeholder="Marca: Nike,Puma, Adidas ..."
-            name="marca">
-            <input type="number" placeholder="discount" name="discount">
-            <input type="file" name="image">
+            <input type="text" placeholder="Name Product" name="name" required>
+            <input type="number" placeholder="Price" name="price" required>
+            <input type="text" placeholder="Min Size" name="minSize" required>
+            <input type="text" placeholder="Max Size" name="maxSize" required>
+            <input type="text" placeholder="Brand: Nike,Puma, Adidas ..."
+            name="brand" required>
+            <input type="number" placeholder="discount" name="discount" required>
+            <input type="file" name="image" required>
             <input type="submit">
         </form>
     </main>

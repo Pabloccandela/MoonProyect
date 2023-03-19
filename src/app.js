@@ -1,10 +1,12 @@
+// express request and initialize as "app"
 const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-
 const app = express();
+
+// others request
+const path = require('path');
+// const cookieParser = require('cookie-parser');
  
-//port
+//port initialization
 const port = process.env.PORT || 3000;
 app.listen(port,() => {
     console.log('start listening on http://localhost:' + port);
@@ -12,11 +14,9 @@ app.listen(port,() => {
 
 //middleware
 app.use(express.static(path.join(__dirname,'../public')));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-
-//cookie de carrito
 
 //ejs MVC
 app.set('view engine', 'ejs');

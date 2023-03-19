@@ -1,40 +1,31 @@
 const {Router} = require('express');
 const router = Router();
-const controller = require('../controllers/mainControllers.js');
-const {body} = require('express-validator');
+const mainController = require('../controllers/mainControllers.js');
 
 // home
-router.get("/",controller.home);
-
-//login
-
-const validationsLogin =[
-    body('username','You must place your user').not().isEmpty(),
-    body('pass','You must place your key').not().isEmpty()
-]
-
-router.get('/login',controller.login);
-router.post('/login',validationsLogin,controller.loginVerified);
-
-//register
-// router.get('/register',controller.register);
-// router.post('/register',controller.register);
+router.get("/",mainController.home);
 
 // contacto
-router.get('/contacto',controller.contacto);
-
+router.get('/contact',mainController.contacto);
 
 //shop
 const productRoutes = require('./productRoutes');
-router.use('/shop',productRoutes);  
-
-
+router.use('/catalogue',productRoutes);  
 
 //error 404
 router.use((req,res,next) => {
     res.status(404).render('error404',{
-        title:'Page not found',
+        title:'Page not found 404',
     })
 })
 
 module.exports = router;
+
+// const {body} = require('express-validator');
+//login
+// const validationsLogin =[
+//     body('username','You must place your user').not().isEmpty(),
+//     body('pass','You must place your key').not().isEmpty()
+// ]
+// router.get('/login',controller.login);
+// router.post('/login',validationsLogin,controller.loginVerified);

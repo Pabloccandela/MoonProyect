@@ -1,9 +1,10 @@
 const {Router} = require('express');
 const router = Router();
+
 const path = require('path');
 
-const productController = require('../controllers/productController');
 
+// Use the multer to save images in public folder and use it in request for the controller 
 const multer  = require('multer');
 const storage= multer.diskStorage({
     destination:path.join(__dirname,"../../public/img/products/sneaker"),
@@ -11,23 +12,20 @@ const storage= multer.diskStorage({
         cb(null,"image-"+Date.now()+path.extname(file.originalname))
     },
 });
-
 const upload=multer({
     storage,
 })
 
-router.get('/',productController.shop);
+// routes
+// import controllers for the routes
+const productController = require('../controllers/productController');
+//base route "Catalogue"
+router.get('/',productController.catalogue);
+//Route to create a new product
+router.get("/add", productController.addForm);
+router.post("/add",upload.single("image"), productController.add);
+// Route to view data from database.
+router.get('/database', productController.database);
 
-// añadir producto
-router.get("/add", productController.addProductsForm);
-router.post("/add",upload.single("image"), productController.addProducts);
-
-// añadir producto
-router.get("/carrito/delete/:id", productController.carritoDelete);
-
-// search products
-
-// carrito
-router.get("/carrito", productController.carrito);
-
+// export routes
 module.exports = router;
