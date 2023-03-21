@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <header><h2>Seguro deseas eliminar "<%=product.name%>":</h2></header>
+    <main class="main-container">
+        <div class="card card-container">
+            <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
+            <div class="card-body">
+            <h5 class="card-title"
+            style="font-size: 1.1rem;"
+            ><%= product.name %></h5>
+            <p class="card-text"
+            style="font-size: 1rem;"
+            >Talles del <%= product.talla %></p>
+            <p class="card-text"
+            style="font-size: 1.1rem; font-weight: bold"
+            >$<%= product.price %></p>
+        </div>
+        <form action="/catalogue/delete/<%=product.id%>" method="POST">
+            <input type="checkbox" name="checkDelete" id="" required>
+            <input class="btn btn-secondary" type="submit" value="Eliminar">
+        </form>
+        <div class="button-cancel">
+            <a href="/catalogue" class="btn btn-primary">Cancelar</a>
+        </div>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

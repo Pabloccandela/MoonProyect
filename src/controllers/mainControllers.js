@@ -1,11 +1,15 @@
 const {validationResult} = require('express-validator');
-const productsData = require('../data/products/products.js');
-// const usersData = require('../data/users/users')
+const db = require('../database/models/index');
+const {Op} = require('sequelize');
+
 
 module.exports={
-    home : (req,res) => {
-        let products = productsData.getProducts();
-        products = products.filter(product => product.discount!=null)
+    home : async(req,res) => {
+        const products = await db.Products.findAll({
+            where:{
+                discount:{[Op.gt]:0}
+            }
+        })
         res.render('home',{
             title: 'Moon Proyect',
             products	

@@ -21,16 +21,16 @@
                 Filtros
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/shop?filter=Nike">Nike</a></li>
-                  <li><a class="dropdown-item" href="/shop?filter=Adidas">Adidas</a></li>
-                  <li><a class="dropdown-item" href="/shop?filter=Converse">Converse</a></li>
-                  <li><a class="dropdown-item" href="/shop?filter=Puma">Puma</a></li>
-                  <li><a class="dropdown-item" href="/shop?filter=Converse">Converse</a></li>
-                  <li><a class="dropdown-item" href="/shop?filter=Vans">Vans</a></li>
+                  <li><a class="dropdown-item" href="/catalogue?filter=Nike">Nike</a></li>
+                  <li><a class="dropdown-item" href="/catalogue?filter=Adidas">Adidas</a></li>
+                  <li><a class="dropdown-item" href="/catalogue?filter=Converse">Converse</a></li>
+                  <li><a class="dropdown-item" href="/catalogue?filter=Puma">Puma</a></li>
+                  <li><a class="dropdown-item" href="/catalogue?filter=Converse">Converse</a></li>
+                  <li><a class="dropdown-item" href="/catalogue?filter=Vans">Vans</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/shop?filter=IMP">Importados</a></li>
+                  <li><a class="dropdown-item" href="/catalogue?filter=IMP">Importados</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/shop">Ver todo...</a></li>
+                  <li><a class="dropdown-item" href="/catalogue">Ver todo...</a></li>
               </ul>
           </div>
     </header>
@@ -51,7 +51,10 @@
                       style="font-size: 1.1rem; font-weight: bold"
                       >$<%= product.price %></p>
                       <!-- <div class="card-button-container">
-                        <a href="/shop?carrito=<%=product.id%> " class="btn btn-primary">Agregar al carrito</a>
+                        <a href="/catalogue/update/<%=product.id%> " class="btn btn-primary">Editar</a>
+                      </div>
+                      <div class="card-button-container">
+                        <a href="/catalogue/delete/<%=product.id%> " class="btn btn-primary">Eliminar</a>
                       </div> -->
                     </div>
                 </div>

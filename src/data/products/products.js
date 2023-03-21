@@ -31,31 +31,5 @@ module.exports = {
         console.log(products)
         return products;
     },
-    filterBySearch: (search) => {
-        const fileProducts = fs.readFileSync(productsFilePath, 'utf8');
-        let allProducts = JSON.parse(fileProducts);
-        let ids = [];
-        search=search.toLowerCase().split(" ")
-
-        // FILTRADO
-        let band=false;
-        allProducts.forEach(product => {
-            const nombre = product.name.toLowerCase().split(" ");
-            for (let i = 0; i < nombre.length; i++) {
-                for (let j = 0; j < search.length; j++) {
-                    if(search[j]==nombre[i]){
-                        band=true;
-                    }               
-                }
-            }
-            if(band==true){
-                ids.push(product.id);
-                band=false;
-            }
-        })
-
-        console.log(ids);
-        // BUSQUEDA POR NOMBRE DE PRODUCTOS
-        return ids;
-    }
+    
 }

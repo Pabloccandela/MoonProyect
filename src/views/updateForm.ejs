@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    
+    <main>
+        <form action="/catalogue/update/<%= product.id %>" method="post">
+            <input type="text" placeholder="Name Product" name="name" value="<%=product.name%>" required>
+            <input type="number" placeholder="Price" name="price" value="<%=product.price%>" required>
+            <input type="text" placeholder="Min Size" name="minSize" value="<%=product.minSize%>" required>
+            <input type="text" placeholder="Max Size" name="maxSize" value="<%=product.maxSize%>" required>
+            <input type="text" placeholder="Brand: Nike,Puma, Adidas ..."
+            name="brand" value="<%=product.brand%>" required>
+            <input type="number" placeholder="discount" name="discount" value="<%=product.discount%>" required>
+            <input type="submit">
+        </form>
+    </main>
+    
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

@@ -24,8 +24,12 @@ router.get('/',productController.catalogue);
 //Route to create a new product
 router.get("/add", productController.addForm);
 router.post("/add",upload.single("image"), productController.add);
-// Route to view data from database.
-router.get('/database', productController.database);
+//Route to update a product
+router.get("/update/:id", productController.updateForm);
+router.post("/update/:id",productController.update);
+//Route to delete a product
+router.get("/delete/:id", productController.deleteForm);
+router.post("/delete/:id",productController.delete);
 
 // export routes
 module.exports = router;
