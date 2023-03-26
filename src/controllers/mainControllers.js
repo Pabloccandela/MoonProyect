@@ -12,13 +12,14 @@ module.exports={
         })
         res.render('home',{
             title: 'Moon Proyect',
-            products	
-        });
+            products}
+        );
     },
     contacto: (req,res) => {
         res.render('contact',{
             title: 'Contacto MOON PROYECT',
-        })
+        }
+        )
     }
 }
 
