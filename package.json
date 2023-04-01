@@ -1,13 +1,14 @@
 {
   "name": "moon-proyect",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Catalogue web application",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build": "npm install",
     "dev": "nodemon index.js"
   },
-  "keywords": [],
+  "keywords": ["Catalogue","application","node","express","mysql2"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
